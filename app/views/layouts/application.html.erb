@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Bootstrap 101 Template</title>
+  <title>Vu Application</title>
 
   <!-- Bootstrap -->
   <%= stylesheet_link_tag 'application' %>
@@ -21,13 +21,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand" href="#">Vu Application</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <% if user_signed_in? %>
+            <li>
+              <a href="#">
+              <%= form_tag("/users/sign_out", method: "delete") do %>
+                  <%= submit_tag("Logout") %>
+              <% end %></a></li>
+        <% end
+        %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -35,7 +41,7 @@
 
 <div class="container">
 
-  <div class="starter-template">
+  <div class="home">
     <%= yield %>
   </div>
 
