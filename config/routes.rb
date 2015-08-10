@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  use_doorkeeper
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  get 'home/index'
+  get 'home/index', as: 'login'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  resources :key_word
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
