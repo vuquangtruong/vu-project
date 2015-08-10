@@ -16,8 +16,10 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'devise', '3.5.1'
 gem 'doorkeeper', '2.2.1'
+gem 'oauth2', '1.0.0'
 gem 'bootstrap-sass', '3.3.5.1'
 gem 'haml-rails', '0.9.0'
+gem 'simpleconfig', '2.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
